@@ -12,7 +12,6 @@ function init() {
 };
 
 window.addEventListener('load', function() {
- console._log(document.getElementsByTagName('script'));
  var hi = document.getElementsByTagName('script');
  var scripty = hi[hi.length-1];
  console._log(scripty);
@@ -252,3 +251,9 @@ if (document.readyState === "complete"
   init();
   });
 }
+
+var hi = document.getElementsByTagName('script');
+ var scripty = hi[hi.length-1];
+ console._log(scripty);
+ scripty.onload = gogo;
+ scripty.onreadystatechange = gogo;
