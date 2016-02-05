@@ -180,11 +180,11 @@ else if(this_site=='new-construction'){
  var about = nav.children[about_number-1];
  nav.removeChild(about);
  nav.insertBefore(about,nav.children[2]);
-}
 
 //ADD BLACK BOX AROUND TEXT BY VIDEO
     document.getElementsByClassName('s-title')[1].style.cssText="padding-top:30px;padding-right:30px;padding-left:30px;background-color:rgba(0,0,0,0.5);margin-bottom:0;"
     document.getElementsByClassName('s-subtitle')[1].style.cssText="padding:30px;background-color:rgba(0,0,0,0.5);"
+}
 
 
 else if(this_site=='refit-repair'){
