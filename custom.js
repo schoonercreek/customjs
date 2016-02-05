@@ -24,7 +24,7 @@ console._log = console.log
 
 //window.addEventListener('load', function() { 
 //console.log = function(msg) {
-gogo = function() {
+var gogo = function() {
 //console._log(msg)
 
 if(dropdown_modded==false) {
