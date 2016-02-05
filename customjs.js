@@ -129,15 +129,18 @@ pac12.onmouseout = function() {
 }
 
 
+if(this_site=='schoonercreek') {
 
-/* MOVE CONTACT LINK */
-var contact = nav.children[contact_number-1]; //contact goes on end
-nav.removeChild(contact);
-nav.appendChild(contact);
+  /* MOVE CONTACT LINK */
+  var contact = nav.children[contact_number-1]; //contact goes on end
+  nav.removeChild(contact);
+  nav.appendChild(contact);
+
+}
 
 
 
-loader.style.opacity="0.0";
+loader.style.opacity="0.2";
 window.setTimeout(function() {
   loader.style.display='none';
 },500);
