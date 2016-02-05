@@ -13,13 +13,19 @@ function init() {
 
 window.addEventListener('load', function() {
  console._log(document.getElementsByTagName('script'));
+ var hi = document.getElementsByTagName('script');
+ var scripty = hi[hi.length-1];
+ console._log(scripty);
+ scripty.onload = gogo;
+ scripty.onreadystatechange = gogo;
 },false);
 
 console._log = console.log
 
 //window.addEventListener('load', function() { 
-console.log = function(msg) {
-console._log(msg)
+//console.log = function(msg) {
+gogo = function() {
+//console._log(msg)
 
 if(dropdown_modded==false) {
 
