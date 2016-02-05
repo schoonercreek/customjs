@@ -147,6 +147,8 @@ if(this_site=='schoonercreek') {
   nav.appendChild(contact);
 
 }
+
+
 else if(this_site=='pac-12'){
  /* MOVE PAC12 LINK */
  nav.removeChild(pac12);
@@ -162,6 +164,8 @@ else if(this_site=='pac-12'){
  nav.removeChild(home);
  nav.insertBefore(home,nav.children[0]);
 }
+
+
 else if(this_site=='new-construction'){
  /* MOVE NEW CONSTRUCTION LINK */
  nav.removeChild(newConstruction);
@@ -177,6 +181,12 @@ else if(this_site=='new-construction'){
  nav.removeChild(about);
  nav.insertBefore(about,nav.children[2]);
 }
+
+//ADD BLACK BOX AROUND TEXT BY VIDEO
+    document.getElementsByClassName('s-title')[1].style.cssText="padding-top:30px;padding-right:30px;padding-left:30px;background-color:rgba(0,0,0,0.5);margin-bottom:0;"
+    document.getElementsByClassName('s-subtitle')[1].style.cssText="padding:30px;background-color:rgba(0,0,0,0.5);"
+
+
 else if(this_site=='refit-repair'){
  /* MOVE ABOUT LINK */
  var about = nav.children[about_number-1];
