@@ -11,6 +11,10 @@ function init() {
  body.style.display= "block";
 };
 
+window.addEventListener('load', function() {
+ console._log(document.getElementsByClassName('script');)
+},false);
+
 console._log = console.log
 
 //window.addEventListener('load', function() { 
