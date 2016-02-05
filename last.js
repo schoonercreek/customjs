@@ -15,8 +15,9 @@ console._log = console.log
 //window.addEventListener('load', function() { 
 console.log = function(msg) {
 console._log(msg)
+}
 
-if(dropdown_modded==false) {
+//if(dropdown_modded==false) {
 
 var nav =  document.getElementsByClassName('s-nav')[0];
 
@@ -207,9 +208,9 @@ window.setTimeout(function() {
 },500);
 
 //}, false);
-}; //end if dropdown_modded
+//}; //end if dropdown_modded
 dropdown_modded=true;
-}; // end console.log
+//}; // end console.log
 
 
 if (document.readyState === "complete"
