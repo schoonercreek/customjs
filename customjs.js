@@ -19,6 +19,15 @@ if(dropdown_modded==false) {
 
 var nav =  document.getElementsByClassName('s-nav')[0];
 
+var sc_url = "http://schoonercreek.com/";
+var br_url = "http://boat-repair.schoonercreek.com/";
+var cbb_url = "http://custom-boat-builder.schoonercreek.com/";
+var pc_url = "http://pacific-cat.schoonercreek.com/";
+if(this_site=='schoonercreek'){sc_url="";}
+else if(this_site=='refit-repair'){br_url="";}
+else if(this_site=='new-construction'){cbb_url="";}
+else if(this_site=='pac-12'){pc_url="";}
+
 /* ADD REFIT AND REPAIR DROPDOWN */
 var refitRepair = nav.children[refit_repair_number-1];
 refitRepair.style.zIndex="99";
@@ -30,27 +39,27 @@ refitRepair.insertBefore(dd1,refitRepair.children[0]);
 
 var rigging = document.createElement("a");
 rigging.innerHTML = "Rigging Loft";
-rigging.setAttribute("href","http://boat-repair.schoonercreek.com/#rigging-loft");
+rigging.setAttribute("href",br_url+"#rigging-loft");
 dd1.appendChild(rigging);
 
 var woodworking = document.createElement("a");
 woodworking.innerHTML = "Woodworking";
-woodworking.setAttribute("href","http://boat-repair.schoonercreek.com/#custom-woodworking");
+woodworking.setAttribute("href",br_url+"#custom-woodworking");
 dd1.appendChild(woodworking);
 
 var electrical = document.createElement("a");
 electrical.innerHTML = "Electrical";
-electrical.setAttribute("href","http://boat-repair.schoonercreek.com/#electrical");
+electrical.setAttribute("href",br_url+"#electrical");
 dd1.appendChild(electrical);
 
 var mechanical = document.createElement("a");
 mechanical.innerHTML = "Mechanical";
-mechanical.setAttribute("href","http://boat-repair.schoonercreek.com/#mechanical-systems");
+mechanical.setAttribute("href",br_url+"#mechanical-systems");
 dd1.appendChild(mechanical);
 
 var painting = document.createElement("a");
 painting.innerHTML = "Painting";
-painting.setAttribute("href","http://boat-repair.schoonercreek.com/#vessel-painting");
+painting.setAttribute("href",br_url+"#vessel-painting");
 dd1.appendChild(painting);
 
 var rates = document.createElement("a");
@@ -79,12 +88,12 @@ newConstruction.insertBefore(dd2,newConstruction.children[0]);
 
 var process = document.createElement("a");
 process.innerHTML = "Our Process";
-process.setAttribute("href","http://custom-boat-builder.schoonercreek.com/#the-construction-process");
+process.setAttribute("href",cbb_url+"#the-construction-process");
 dd2.appendChild(process);
 
 var recent = document.createElement("a");
 recent.innerHTML = "Recent Projects";
-recent.setAttribute("href","http://custom-boat-builder.schoonercreek.com/#recent-projects");
+recent.setAttribute("href",cbb_url+"#recent-projects");
 dd2.appendChild(recent);
 
 newConstruction.onmouseover = function() {
@@ -107,12 +116,12 @@ pac12.insertBefore(dd3,pac12.children[0]);
 
 var specs = document.createElement("a");
 specs.innerHTML = "Specifications";
-specs.setAttribute("href","http://pacific-cat.schoonercreek.com/#details");
+specs.setAttribute("href",pc_url+"#details");
 dd3.appendChild(specs);
 
 var construc = document.createElement("a");
 construc.innerHTML = "Construction";
-construc.setAttribute("href","http://pacific-cat.schoonercreek.com/#construction");
+construc.setAttribute("href",pc_url+"#construction");
 dd3.appendChild(construc);
 
 var brochure = document.createElement("a");
