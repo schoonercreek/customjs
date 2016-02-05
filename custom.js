@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
  console._log(scripty);
  scripty.addEventListener('load', function() {
   gogo();
- }
+ });
 },false);
 
 console._log = console.log
