@@ -137,10 +137,61 @@ if(this_site=='schoonercreek') {
   nav.appendChild(contact);
 
 }
+else if(this_site=='pac-12'){
+ /* MOVE PAC12 LINK */
+ nav.removeChild(pac12);
+ nav.appendChild(pac12);
+ 
+ /* MOVE CONTACT LINK */
+ var contact = nav.children[contact_number-2]; //contact goes on end
+ nav.removeChild(contact);
+ nav.appendChild(contact);
+ 
+ /* MOVE HOME LINK */
+ var home = nav.children[home_number-3];
+ nav.removeChild(home);
+ nav.insertBefore(home,nav.children[0]);
+}
+else if(this_site=='new-construction'){
+ /* MOVE NEW CONSTRUCTION LINK */
+ nav.removeChild(newConstruction);
+ nav.insertBefore(newConstruction,pac12);
+ 
+ /* MOVE CONTACT LINK */
+ var contact = nav.children[contact_number-2]; //contact goes on end
+ nav.removeChild(contact);
+ nav.appendChild(contact);
+ 
+ /* MOVE ABOUT LINK */
+ var about = nav.children[about_number-1];
+ nav.removeChild(about);
+ nav.insertBefore(nav.children[2]);
+}
+else if(this_site=='refit-repair'){
+ /* MOVE ABOUT LINK */
+ var about = nav.children[about_number-1];
+ nav.removeChild(about);
+ nav.insertBefore(about,nav.children[0]);
+ 
+ /* MOVE CONTACT LINK */
+ var contact = nav.children[contact_number-1]; //contact goes on end
+ nav.removeChild(contact);
+ nav.appendChild(contact);
+ 
+ /* MOVE HOME LINK */
+ var home = nav.children[home_number-2];
+ nav.removeChild(home);
+ nav.insertBefore(home,nav.children[0]);
+ 
+ /* MOVE Boatyard LINK */
+ var boatyard = nav.children[boatyard_number-2];
+ nav.removeChild(boatyard);
+ nav.insertBefore(boatyard,nav.children[2]);
+}
 
 
 
-loader.style.opacity="0.2";
+loader.style.opacity="0.0";
 window.setTimeout(function() {
   loader.style.display='none';
 },500);
