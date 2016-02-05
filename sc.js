@@ -197,6 +197,15 @@ else if(this_site=='refit-repair'){
  var boatyard = nav.children[boatyard_number-2];
  nav.removeChild(boatyard);
  nav.insertBefore(boatyard,nav.children[2]);
+ 
+ //ADD BLACK BOXES AROUND SOME TEXT
+    var boxes = document.getElementsByClassName('columns');
+    boxes[1].style.marginLeft='0px'; //painting pic
+    boxes[2].style.cssText='margin-right:0;background-color:rgba(0,0,0,0.5);';
+    boxes[2].getElementsByClassName('s-title')[0].style.paddingLeft="20px";
+    boxes[2].getElementsByClassName('s-subtitle')[0].style.paddingLeft="20px";
+    boxes[7].getElementsByClassName('s-title-group')[0].style.cssText="padding:20px;background-color:rgba(0,0,0,0.5);"
+    boxes[3].getElementsByClassName('s-rva-media')[0].style.border="1px solid gray";
 }
 
 
