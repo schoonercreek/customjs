@@ -175,7 +175,7 @@ else if(this_site=='new-construction'){
  /* MOVE ABOUT LINK */
  var about = nav.children[about_number-1];
  nav.removeChild(about);
- nav.insertBefore(nav.children[2]);
+ nav.insertBefore(about,nav.children[2]);
 }
 else if(this_site=='refit-repair'){
  /* MOVE ABOUT LINK */
