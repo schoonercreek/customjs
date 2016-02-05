@@ -1,0 +1,24 @@
+body{
+  display:none;
+}
+a{
+  cursor:pointer;
+  font-family:"Raleway",sans-serif;
+}
+.down1{
+  transform:translateY(33px) !important;
+  -webkit-transform:translateY(33px) !important;
+  opacity:1 !important;
+}
+#loader{
+  transition:all 500ms ease-in;
+  -webkit-transition:all 500ms ease-in;
+  opacity:1.0;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color:white;
+  z-index:9999;
+}
