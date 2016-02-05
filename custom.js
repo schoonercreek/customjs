@@ -12,7 +12,7 @@ function init() {
 };
 
 window.addEventListener('load', function() {
- //console._log(document.getElementsByTagName('script'));
+ console._log(document.getElementsByTagName('script'));
 },false);
 
 console._log = console.log
