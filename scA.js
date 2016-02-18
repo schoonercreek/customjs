@@ -30,7 +30,9 @@ else if(this_site=='new-construction'){cbb_url="";}
 else if(this_site=='pac-12'){pc_url="";}
 
 /* ADD REFIT AND REPAIR DROPDOWN */
-makeDd(nav.children[refit_repair_number-1],["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf"],br_url)
+var refitRepair = nav.children[refit_repair_number-1]
+var dd1 = document.createElement("div");
+makeDd(refitRepair,dd1,["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf"],br_url)
 
 
 /*var refitRepair = nav.children[refit_repair_number-1];
@@ -82,8 +84,9 @@ refitRepair.onmouseout = function() {
 
 
 /* ADD NEW CONSTRUCTION DROPDOWN */
-
-makeDd(nav.children[new_construction_number-1],["Our Process","Recent Projects"],["#the-construction-process","#recent-projects"],cbb_url);
+var newConstruction = nav.children[new_construction_number-1];
+var dd2 = document.createElement("div");
+makeDd(newConstruction,dd2,["Our Process","Recent Projects"],["#the-construction-process","#recent-projects"],cbb_url);
 
 /*var newConstruction = nav.children[new_construction_number-1];
 newConstruction.style.zIndex="99";
@@ -113,8 +116,9 @@ newConstruction.onmouseout = function() {
 
 
 /* ADD PAC12 DROPDOWN */
-
-makeDd(nav.children[pac_12_number-1],["Specifications","Construction","Brochure (pdf)"],["#details","#construction","http://archive.schoonercreek.com/images/pacificcat12.pdf"],pc_url);
+var pac12 = nav.children[pac_12_number-1];
+var dd3 = document.createElement("div");
+makeDd(pac12,dd3,["Specifications","Construction","Brochure (pdf)"],["#details","#construction","http://archive.schoonercreek.com/images/pacificcat12.pdf"],pc_url);
 
 /*var pac12 = nav.children[pac_12_number-1];
 pac12.style.zIndex="99";
@@ -251,19 +255,18 @@ if (document.readyState === "complete"
   });
 }
 
-var makeDd = function(element,text_,link_,url) {
+var makeDd = function(element,dd,text_,link_,url) {
  element.style.zIndex="99";
  var widthy = element.getBoundingClientRect().width;
  
- var dd1 = document.createElement("div");
- dd1.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
- element.insertBefore(dd1,element.children[0]);
+ dd.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
+ element.insertBefore(dd,element.children[0]);
  
  for(var i=0; i<text_.length; i++) {
   var a = document.createElement("a");
   a.innerHTML = text_[i];
   a.setAttribute("href",url+link_[i]);
-  dd1.appendChild(a);
+  dd.appendChild(a);
  }
  
 }
