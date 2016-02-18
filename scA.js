@@ -30,7 +30,7 @@ else if(this_site=='new-construction'){cbb_url="";}
 else if(this_site=='pac-12'){pc_url="";}
 
 /* ADD REFIT AND REPAIR DROPDOWN */
-makeDd(nav.children[refit_repair_number-1],["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf"])
+makeDd(nav.children[refit_repair_number-1],["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf"],br_url)
 
 
 /*var refitRepair = nav.children[refit_repair_number-1];
@@ -82,7 +82,10 @@ refitRepair.onmouseout = function() {
 
 
 /* ADD NEW CONSTRUCTION DROPDOWN */
-var newConstruction = nav.children[new_construction_number-1];
+
+makeDd(nav.children[new_construction_number-1],["Our Process","Recent Projects"],["#the-construction-process","#recent-projects"],cbb_url);
+
+/*var newConstruction = nav.children[new_construction_number-1];
 newConstruction.style.zIndex="99";
 var widthy2 = newConstruction.getBoundingClientRect().width;
 
@@ -98,7 +101,7 @@ dd2.appendChild(process);
 var recent = document.createElement("a");
 recent.innerHTML = "Recent Projects";
 recent.setAttribute("href",cbb_url+"#recent-projects");
-dd2.appendChild(recent);
+dd2.appendChild(recent);*/
 
 newConstruction.onmouseover = function() {
   dd2.setAttribute("class","down1");
@@ -110,7 +113,10 @@ newConstruction.onmouseout = function() {
 
 
 /* ADD PAC12 DROPDOWN */
-var pac12 = nav.children[pac_12_number-1];
+
+makeDd(nav.children[pac_12_number-1],["Specifications","Construction","Brochure (pdf)"],["#details","#construction","http://archive.schoonercreek.com/images/pacificcat12.pdf"],pc_url);
+
+/*var pac12 = nav.children[pac_12_number-1];
 pac12.style.zIndex="99";
 var widthy3 = pac12.getBoundingClientRect().width;
 
@@ -132,7 +138,7 @@ var brochure = document.createElement("a");
 brochure.innerHTML = "Brochure (pdf)";
 brochure.setAttribute("href","http://archive.schoonercreek.com/images/pacificcat12.pdf");
 brochure.setAttribute("target","_blank");
-dd3.appendChild(brochure);
+dd3.appendChild(brochure);*/
 
 pac12.onmouseover = function() {
   dd3.setAttribute("class","down1");
@@ -221,22 +227,7 @@ else if(this_site=='refit-repair'){
     boxes[3].getElementsByClassName('s-rva-media')[0].style.border="1px solid gray";
 }
 
-var makeDd = function(element,text_,link_) {
- element.style.zIndex="99";
- var widthy = element.getBoundingClientRect().width;
- 
- var dd1 = document.createElement("div");
- dd1.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
- element.insertBefore(dd1,element.children[0]);
- 
- for(var i=0; i<text_.length; i++) {
-  var a = document.createElement("a");
-  a.innerHTML = text_[i];
-  a.setAttribute("href",br_url+link_[i]);
-  dd1.appendChild(a);
- }
- 
-}
+
 
 loader.style.opacity="0.0";
 window.setTimeout(function() {
@@ -260,4 +251,19 @@ if (document.readyState === "complete"
   });
 }
 
-
+var makeDd = function(element,text_,link_,url) {
+ element.style.zIndex="99";
+ var widthy = element.getBoundingClientRect().width;
+ 
+ var dd1 = document.createElement("div");
+ dd1.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
+ element.insertBefore(dd1,element.children[0]);
+ 
+ for(var i=0; i<text_.length; i++) {
+  var a = document.createElement("a");
+  a.innerHTML = text_[i];
+  a.setAttribute("href",br_url+link_[i]);
+  dd1.appendChild(a);
+ }
+ 
+}
