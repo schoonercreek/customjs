@@ -87,7 +87,7 @@ if(this_site=='schoonercreek') {
   
   var mobileContact = mobileNav.children[contact_number-1];
   mobileNav.removeChild(mobileContact);
-  mobileNav.appendChild(mobileContact)
+  mobileNav.appendChild(mobileContact);
 
 }
 
@@ -97,15 +97,27 @@ else if(this_site=='pac-12'){
  nav.removeChild(pac12);
  nav.appendChild(pac12);
  
+ var mobilePac12 = mobileNav.children[pac_12_number-1];
+ mobileNav.removeChild(mobilePac12);
+ mobileNav.appendChild(mobilePac12);
+ 
  /* MOVE CONTACT LINK */
  var contact = nav.children[contact_number-2]; //contact goes on end
  nav.removeChild(contact);
  nav.appendChild(contact);
  
+ var mobileContact = mobileNav.children[contact_number-2];
+ mobileNav.removeChild(mobileContact);
+ mobileNav.appendChild(mobileContact);
+ 
  /* MOVE HOME LINK */
- var home = nav.children[home_number-3];
+ var home = mobileNav.children[home_number-3];
  nav.removeChild(home);
  nav.insertBefore(home,nav.children[0]);
+
+ var mobileHome = mobileNav.children[home_number-3];
+ mobileNav.removeChild(mobileHome);
+ mobileNav.insertBefore(mobileHome,mobileNav.children[0]);
 }
 
 
