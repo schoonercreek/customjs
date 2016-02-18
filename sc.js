@@ -85,7 +85,7 @@ if(this_site=='schoonercreek') {
   nav.removeChild(contact);
   nav.appendChild(contact);
   
-  var mobileContact = mobileNav[contact_number-1];
+  var mobileContact = mobileNav.children[contact_number-1];
   mobileNav.removeChild(mobileContact);
   mobileNav.appendChild(mobileContact)
 
