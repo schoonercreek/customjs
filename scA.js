@@ -32,7 +32,11 @@ else if(this_site=='pac-12'){pc_url="";}
 /* ADD REFIT AND REPAIR DROPDOWN */
 var refitRepair = nav.children[refit_repair_number-1]
 var dd1 = document.createElement("div");
-makeDd(refitRepair,dd1,["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf"],br_url)
+makeDd(refitRepair,dd1,
+   ["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],
+   ["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf"],
+   br_url,
+   6); // #6 is a PDF link
 
 
 /*var refitRepair = nav.children[refit_repair_number-1];
@@ -86,7 +90,7 @@ refitRepair.onmouseout = function() {
 /* ADD NEW CONSTRUCTION DROPDOWN */
 var newConstruction = nav.children[new_construction_number-1];
 var dd2 = document.createElement("div");
-makeDd(newConstruction,dd2,["Our Process","Recent Projects"],["#the-construction-process","#recent-projects"],cbb_url);
+makeDd(newConstruction,dd2,["Our Process","Recent Projects"],["#the-construction-process","#recent-projects"],cbb_url,0);
 
 /*var newConstruction = nav.children[new_construction_number-1];
 newConstruction.style.zIndex="99";
@@ -118,7 +122,7 @@ newConstruction.onmouseout = function() {
 /* ADD PAC12 DROPDOWN */
 var pac12 = nav.children[pac_12_number-1];
 var dd3 = document.createElement("div");
-makeDd(pac12,dd3,["Specifications","Construction","Brochure (pdf)"],["#details","#construction","http://archive.schoonercreek.com/images/pacificcat12.pdf"],pc_url);
+makeDd(pac12,dd3,["Specifications","Construction","Brochure (pdf)"],["#details","#construction","http://archive.schoonercreek.com/images/pacificcat12.pdf"],pc_url,1);
 
 /*var pac12 = nav.children[pac_12_number-1];
 pac12.style.zIndex="99";
@@ -255,7 +259,7 @@ if (document.readyState === "complete"
   });
 }
 
-var makeDd = function(element,dd,text_,link_,url) {
+var makeDd = function(element,dd,text_,link_,url,pdf) {
  element.style.zIndex="99";
  var widthy = element.getBoundingClientRect().width;
  
@@ -265,6 +269,10 @@ var makeDd = function(element,dd,text_,link_,url) {
  for(var i=0; i<text_.length; i++) {
   var a = document.createElement("a");
   a.innerHTML = text_[i];
+  if(pdf-1==i){
+   a.setAttribute("target","_blank");
+   url="";
+  }
   a.setAttribute("href",url+link_[i]);
   dd.appendChild(a);
  }
