@@ -122,7 +122,7 @@ newConstruction.onmouseout = function() {
 /* ADD PAC12 DROPDOWN */
 var pac12 = nav.children[pac_12_number-1];
 var dd3 = document.createElement("div");
-makeDd(pac12,dd3,["Specifications","Construction","Brochure (pdf)"],["#details","#construction","http://archive.schoonercreek.com/images/pacificcat12.pdf"],pc_url,1);
+makeDd(pac12,dd3,["Specifications","Construction","Brochure (pdf)"],["#details","#construction","http://archive.schoonercreek.com/images/pacificcat12.pdf"],pc_url,3);
 
 /*var pac12 = nav.children[pac_12_number-1];
 pac12.style.zIndex="99";
