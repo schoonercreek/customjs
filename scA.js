@@ -262,7 +262,7 @@ var makeDd = function(element,text_,link_,url) {
  for(var i=0; i<text_.length; i++) {
   var a = document.createElement("a");
   a.innerHTML = text_[i];
-  a.setAttribute("href",br_url+link_[i]);
+  a.setAttribute("href",url+link_[i]);
   dd1.appendChild(a);
  }
  
