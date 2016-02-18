@@ -111,7 +111,7 @@ else if(this_site=='pac-12'){
  mobileNav.appendChild(mobileContact);
  
  /* MOVE HOME LINK */
- var home = mobileNav.children[home_number-3];
+ var home = nav.children[home_number-3];
  nav.removeChild(home);
  nav.insertBefore(home,nav.children[0]);
 
