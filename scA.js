@@ -30,7 +30,10 @@ else if(this_site=='new-construction'){cbb_url="";}
 else if(this_site=='pac-12'){pc_url="";}
 
 /* ADD REFIT AND REPAIR DROPDOWN */
-var refitRepair = nav.children[refit_repair_number-1];
+makeDd(nav.children[refit_repair_number-1],["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf"])
+
+
+/*var refitRepair = nav.children[refit_repair_number-1];
 refitRepair.style.zIndex="99";
 var widthy = refitRepair.getBoundingClientRect().width;
 
@@ -67,7 +70,7 @@ var rates = document.createElement("a");
 rates.innerHTML = "Rates (pdf)";
 rates.setAttribute("href","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf");
 rates.setAttribute("target","_blank");
-dd1.appendChild(rates);
+dd1.appendChild(rates);*/
 
 refitRepair.onmouseover = function() {
   dd1.setAttribute("class","down1");
