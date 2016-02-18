@@ -221,7 +221,22 @@ else if(this_site=='refit-repair'){
     boxes[3].getElementsByClassName('s-rva-media')[0].style.border="1px solid gray";
 }
 
-
+var makeDd = function(element,text_,link_) {
+ element.style.zIndex="99";
+ var widthy = element.getBoundingClientRect().width;
+ 
+ var dd1 = document.createElement("div");
+ dd1.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
+ element.insertBefore(dd1,element.children[0]);
+ 
+ for(var i=0; i<text_.length; i++) {
+  var a = document.createElement("a");
+  a.innerHTML = text_[i];
+  a.setAttribute("href",br_url+link_[i]);
+  dd1.appendChild(a);
+ }
+ 
+}
 
 loader.style.opacity="0.0";
 window.setTimeout(function() {
@@ -245,19 +260,4 @@ if (document.readyState === "complete"
   });
 }
 
-var makeDd = function(element,text_,link_) {
- element.style.zIndex="99";
- var widthy = element.getBoundingClientRect().width;
- 
- var dd1 = document.createElement("div");
- dd1.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
- element.insertBefore(dd1,element.children[0]);
- 
- for(var i=0; i<text_.length; i++) {
-  var a = document.createElement("a");
-  a.innerHTML = text_[i];
-  a.setAttribute("href",br_url+link_[i]);
-  dd1.appendChild(a);
- }
- 
-}
+
