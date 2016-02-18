@@ -19,6 +19,7 @@ console._log(msg)
 if(dropdown_modded==false) {
 
 var nav =  document.getElementsByClassName('s-nav')[0];
+var mobileNav =  document.getElementsByClassName('s-navbar-container')[0];
 
 var sc_url = "http://schoonercreek.com/";
 var br_url = "http://boat-repair.schoonercreek.com/";
@@ -83,6 +84,10 @@ if(this_site=='schoonercreek') {
   var contact = nav.children[contact_number-1]; //contact goes on end
   nav.removeChild(contact);
   nav.appendChild(contact);
+  
+  var mobileContact = mobileNav[contact_number-1];
+  mobileNav.removeChild(mobileContact);
+  mobileNav.appendChild(mobileContact)
 
 }
 
