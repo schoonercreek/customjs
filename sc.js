@@ -126,15 +126,28 @@ else if(this_site=='new-construction'){
  nav.removeChild(newConstruction);
  nav.insertBefore(newConstruction,pac12);
  
+ var mobileNewConstruction = mobileNav.children[new_construction_number-1];
+ nav.removeChild(mobileNewConstruction);
+ var mobilePac12 = mobileNav.children[pac_12_number-1];
+ nav.insertBefore(mobileNewConstruction,mobilePac12);
+ 
  /* MOVE CONTACT LINK */
  var contact = nav.children[contact_number-2]; //contact goes on end
  nav.removeChild(contact);
  nav.appendChild(contact);
  
+ var mobileContact = mobileNav.children[contact_number-2]; //contact goes on end
+ nav.removeChild(mobileContact);
+ nav.appendChild(mobileContact);
+ 
  /* MOVE ABOUT LINK */
  var about = nav.children[about_number-1];
  nav.removeChild(about);
  nav.insertBefore(about,nav.children[2]);
+ 
+ var mobileAbout = mobileNav.children[about_number-1];
+ nav.removeChild(mobileAbout);
+ nav.insertBefore(mobileAbout,mobileNav.children[2]);
 
 //ADD BLACK BOX AROUND TEXT BY VIDEO
     document.getElementsByClassName('s-title')[1].style.cssText="padding-top:30px;padding-right:30px;padding-left:30px;background-color:rgba(0,0,0,0.5);margin-bottom:0;"
