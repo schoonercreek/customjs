@@ -250,7 +250,7 @@ var makeDd = function(element,text_,link_) {
  dd1.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
  element.insertBefore(dd1,element.children[0]);
  
- for(var i=0; i<html_.length, i++) {
+ for(var i=0; i<text_.length; i++) {
   var a = document.createElement("a");
   a.innerHTML = text_[i];
   a.setAttribute("href",br_url+link_[i]);
