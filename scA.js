@@ -14,6 +14,7 @@ function init() {
 _strk.push(['Page.didMount', function(){
 //window.addEventListener('load', function() { 
 
+
 var nav =  document.getElementsByClassName('s-nav')[0];
 var mobileNav =  document.getElementsByClassName('s-navbar-container')[0].children[1].children[0];
 
