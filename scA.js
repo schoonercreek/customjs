@@ -12,6 +12,10 @@ function init() {
 
 console._log = console.log
 
+_strk.push(['Page.didMount', function(){
+   console._log("page did mount");
+}])
+
 //window.addEventListener('load', function() { 
 console.log = function(msg) {
 console._log(msg)
