@@ -1,6 +1,5 @@
 
 var loader;
-var dropdown_modded = false;
 
 function init() { 
  loader = document.createElement('div');
@@ -10,17 +9,10 @@ function init() {
  body.style.display= "block";
 };
 
-console._log = console.log
+
 
 _strk.push(['Page.didMount', function(){
-   console._log("page did mount");
-}])
-
 //window.addEventListener('load', function() { 
-console.log = function(msg) {
-console._log(msg)
-
-if(dropdown_modded==false) {
 
 var nav =  document.getElementsByClassName('s-nav')[0];
 var mobileNav =  document.getElementsByClassName('strikingly-drawer')[0].children[0];
@@ -215,9 +207,7 @@ window.setTimeout(function() {
 },500);
 
 //}, false);
-}; //end if dropdown_modded
-dropdown_modded=true;
-}; // end console.log
+}]);
 
 
 /* INITIALIZATION */
