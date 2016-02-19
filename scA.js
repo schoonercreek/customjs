@@ -19,6 +19,7 @@ console._log(msg)
 if(dropdown_modded==false) {
 
 var nav =  document.getElementsByClassName('s-nav')[0];
+var mobileNav =  document.getElementsByClassName('strikingly-drawer')[0].children[0];
 
 var sc_url = "http://schoonercreek.com/";
 var br_url = "http://boat-repair.schoonercreek.com/";
@@ -83,6 +84,10 @@ if(this_site=='schoonercreek') {
   var contact = nav.children[contact_number-1]; //contact goes on end
   nav.removeChild(contact);
   nav.appendChild(contact);
+  
+  var mobileContact = mobileNav.children[contact_number-1];
+  mobileNav.removeChild(mobileContact);
+  mobileNav.appendChild(mobileContact);
 
 }
 
@@ -92,15 +97,27 @@ else if(this_site=='pac-12'){
  nav.removeChild(pac12);
  nav.appendChild(pac12);
  
+ var mobilePac12 = mobileNav.children[pac_12_number-1];
+ mobileNav.removeChild(mobilePac12);
+ mobileNav.appendChild(mobilePac12);
+ 
  /* MOVE CONTACT LINK */
  var contact = nav.children[contact_number-2]; //contact goes on end
  nav.removeChild(contact);
  nav.appendChild(contact);
  
+ var mobileContact = mobileNav.children[contact_number-2];
+ mobileNav.removeChild(mobileContact);
+ mobileNav.appendChild(mobileContact);
+ 
  /* MOVE HOME LINK */
  var home = nav.children[home_number-3];
  nav.removeChild(home);
  nav.insertBefore(home,nav.children[0]);
+
+ var mobileHome = mobileNav.children[home_number-3];
+ mobileNav.removeChild(mobileHome);
+ mobileNav.insertBefore(mobileHome,mobileNav.children[0]);
 }
 
 
@@ -109,15 +126,28 @@ else if(this_site=='new-construction'){
  nav.removeChild(newConstruction);
  nav.insertBefore(newConstruction,pac12);
  
+ var mobileNewConstruction = mobileNav.children[new_construction_number-1];
+ mobileNav.removeChild(mobileNewConstruction);
+ var mobilePac12 = mobileNav.children[pac_12_number-1];
+ mobileNav.insertBefore(mobileNewConstruction,mobilePac12);
+ 
  /* MOVE CONTACT LINK */
  var contact = nav.children[contact_number-2]; //contact goes on end
  nav.removeChild(contact);
  nav.appendChild(contact);
  
+ var mobileContact = mobileNav.children[contact_number-2]; //contact goes on end
+ mobileNav.removeChild(mobileContact);
+ mobileNav.appendChild(mobileContact);
+ 
  /* MOVE ABOUT LINK */
  var about = nav.children[about_number-1];
  nav.removeChild(about);
  nav.insertBefore(about,nav.children[2]);
+ 
+ var mobileAbout = mobileNav.children[about_number-1];
+ mobileNav.removeChild(mobileAbout);
+ mobileNav.insertBefore(mobileAbout,mobileNav.children[2]);
 
 //ADD BLACK BOX AROUND TEXT BY VIDEO
     document.getElementsByClassName('s-title')[1].style.cssText="padding-top:30px;padding-right:30px;padding-left:30px;background-color:rgba(0,0,0,0.5);margin-bottom:0;"
@@ -131,20 +161,36 @@ else if(this_site=='refit-repair'){
  nav.removeChild(about);
  nav.insertBefore(about,nav.children[0]);
  
+ var mobileAbout = mobileNav.children[about_number-1];
+ mobileNav.removeChild(mobileAbout);
+ mobileNav.insertBefore(mobileAbout,mobileNav.children[0]);
+ 
  /* MOVE CONTACT LINK */
  var contact = nav.children[contact_number-1]; //contact goes on end
  nav.removeChild(contact);
  nav.appendChild(contact);
+ 
+ var mobileContact = mobileNav.children[contact_number-1]; //contact goes on end
+ mobileNav.removeChild(mobileContact);
+ mobileNav.appendChild(mobileContact);
  
  /* MOVE HOME LINK */
  var home = nav.children[home_number-2];
  nav.removeChild(home);
  nav.insertBefore(home,nav.children[0]);
  
+ var mobileHome = mobileNav.children[home_number-2];
+ mobileNav.removeChild(mobileHome);
+ mobileNav.insertBefore(mobileHome,mobileNav.children[0]);
+ 
  /* MOVE Boatyard LINK */
  var boatyard = nav.children[boatyard_number-2];
  nav.removeChild(boatyard);
  nav.insertBefore(boatyard,nav.children[2]);
+ 
+ var mobileBoatyard = mobileNav.children[boatyard_number-2];
+ mobileNav.removeChild(mobileBoatyard);
+ mobileNav.insertBefore(mobileBoatyard,mobileNav.children[2]);
  
  //ADD BLACK BOXES AROUND SOME TEXT
     var boxes = document.getElementsByClassName('columns');
