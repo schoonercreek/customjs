@@ -13,13 +13,18 @@ function init() {
  repeater();
 };
 
+console.log("goingin now")
 //window.addEventListener('load', function() { 
 var repeater = function() {
+ console.log('in repeater')
  var nav=document.getElementsByClassName('s-nav')
  var mobile = document.getElementsByClassName('strikingly-drawer')
+ console.log("got nav mobile",nav,mobile)
  if(nav && mobile){
+  console.log('going to gooo now')
   gogogo();
  } else {
+  console.log('didnt go')
   window.setTimeout(function() {
    repeater()
   },100)
