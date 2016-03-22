@@ -15,7 +15,9 @@ function init() {
 
 //window.addEventListener('load', function() { 
 var repeater = function() {
- if(document.getElementsByClassName('s-nav') && document.getElementsByClassName('strikingly-drawer')){
+ var nav=document.getElementsByClassName('s-nav')
+ var mobile = document.getElementsByClassName('strikingly-drawer')
+ if(nav && mobile){
   gogogo();
  } else {
   window.setTimeout(function() {
