@@ -2,7 +2,7 @@ if(!detectIE()){
 
 
 var loader;
-var dropdown_modded = false;
+var counter = 0;
 
 function init() { 
  loader = document.createElement('div');
@@ -10,15 +10,23 @@ function init() {
  var body = document.getElementById('sites');
  body.appendChild(loader);
  body.style.display= "block";
+ repeater();
 };
 
-console._log = console.log
-
 //window.addEventListener('load', function() { 
-console.log = function(msg) {
-console._log(msg)
+var repeater = function() {
+ var nav =  document.getElementsByClassName('s-nav')[0];
+ var mobileNav =  document.getElementsByClassName('strikingly-drawer')[0].children[0];
+ if(nav && mobileNav){
+  gogogo();
+ } else {
+  window.setTimeout(function() {
+   repeater()
+  },100)
+ }
+}
 
-if(dropdown_modded==false) {
+var gogogo = function() {
 
 var nav =  document.getElementsByClassName('s-nav')[0];
 var mobileNav =  document.getElementsByClassName('strikingly-drawer')[0].children[0];
@@ -213,9 +221,8 @@ window.setTimeout(function() {
 },500);
 
 //}, false);
-}; //end if dropdown_modded
-dropdown_modded=true;
-}; // end console.log
+
+}; // end gogogo
 
 
 /* INITIALIZATION */
