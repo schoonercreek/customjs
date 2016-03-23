@@ -1,6 +1,8 @@
+if(!detectIE()){
+
 
 var loader;
-var dropdown_modded = false;
+var counter = 0;
 
 function init() { 
  loader = document.createElement('div');
@@ -8,15 +10,24 @@ function init() {
  var body = document.getElementById('sites');
  body.appendChild(loader);
  body.style.display= "block";
+ repeater();
 };
 
-console._log = console.log
-
 //window.addEventListener('load', function() { 
-console.log = function(msg) {
-console._log(msg)
+var repeater = function() {
+ var nav=document.getElementsByClassName('s-nav')[0]
+ var mobile = document.getElementsByClassName('strikingly-drawer')[0]
+ if(nav && mobile){
+  gogogo();
+ } else {
+  console.log('.')
+  window.setTimeout(function() {
+   repeater()
+  },100)
+ }
+}
 
-if(dropdown_modded==false) {
+var gogogo = function() {
 
 var nav =  document.getElementsByClassName('s-nav')[0];
 var mobileNav =  document.getElementsByClassName('strikingly-drawer')[0].children[0];
@@ -211,9 +222,8 @@ window.setTimeout(function() {
 },500);
 
 //}, false);
-}; //end if dropdown_modded
-dropdown_modded=true;
-}; // end console.log
+
+}; // end gogogo
 
 
 /* INITIALIZATION */
@@ -248,4 +258,47 @@ var makeDd = function(element,dd,text_,link_,url,pdf) {
   dd.appendChild(a);
  }
  
+} //end madeDd
+
+
+} //end if !detectIE
+
+function detectIE() {
+  var ua = window.navigator.userAgent;
+
+  // Test values; Uncomment to check result …
+
+  // IE 10
+  // ua = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)';
+  
+  // IE 11
+  // ua = 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko';
+  
+  // IE 12 / Spartan
+  // ua = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
+  
+  // Edge (IE 12+)
+  // ua = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2486.0 Safari/537.36 Edge/13.10586';
+
+  var msie = ua.indexOf('MSIE ');
+  if (msie > 0) {
+    // IE 10 or older => return version number
+    return parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10);
+  }
+
+  var trident = ua.indexOf('Trident/');
+  if (trident > 0) {
+    // IE 11 => return version number
+    var rv = ua.indexOf('rv:');
+    return parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10);
+  }
+
+  var edge = ua.indexOf('Edge/');
+  if (edge > 0) {
+    // Edge (IE 12+) => return version number
+    return parseInt(ua.substring(edge + 5, ua.indexOf('.', edge)), 10);
+  }
+
+  // other browser
+  return false;
 }
