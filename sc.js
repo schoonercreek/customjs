@@ -1,3 +1,5 @@
+//by Evan Feenstra
+
 if(!detectIE()){
 
 
