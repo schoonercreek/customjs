@@ -2,7 +2,28 @@ if(!detectIE()){
 
 
 var loader;
-var counter = 0;
+
+/* DROPDOWN GENERATOR */
+var makeDd = function(element,dd,text_,link_,url,pdf) {
+ element.style.zIndex="99";
+ var widthy = element.getBoundingClientRect().width;
+ 
+ dd.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
+ element.insertBefore(dd,element.children[0]);
+ 
+ for(var i=0; i<text_.length; i++) {
+  var a = document.createElement("a");
+  a.innerHTML = text_[i];
+  if(pdf-1==i){
+   a.setAttribute("target","_blank");
+   url="";
+  }
+  a.setAttribute("href",url+link_[i]);
+  dd.appendChild(a);
+ }
+ 
+}; //end madeDd
+
 
 function init() { 
  loader = document.createElement('div');
@@ -13,7 +34,6 @@ function init() {
  repeater();
 };
 
-//window.addEventListener('load', function() { 
 var repeater = function() {
  var nav=document.getElementsByClassName('s-nav')[0]
  var mobile = document.getElementsByClassName('strikingly-drawer')[0]
@@ -225,9 +245,7 @@ window.setTimeout(function() {
 
 }; // end gogogo
 
-
 /* INITIALIZATION */
-
 if (document.readyState === "complete"
    || document.readyState === "loaded"
    || document.readyState === "interactive") {
@@ -238,28 +256,6 @@ if (document.readyState === "complete"
   init();
   });
 }
-
-/* DROPDOWN GENERATOR */
-var makeDd = function(element,dd,text_,link_,url,pdf) {
- element.style.zIndex="99";
- var widthy = element.getBoundingClientRect().width;
- 
- dd.style.cssText="position:absolute;width:"+widthy+"px;background-color:rgba(33,44,55,0.7);color:#eee;transform:translateY(-"+(text_.length*33)+"px);-webkit-transform:translateY(-"+(text_.length*33)+"px);transition:all 250ms ease-in;-webkit-transition:all 250ms ease-in;opacity:0;";
- element.insertBefore(dd,element.children[0]);
- 
- for(var i=0; i<text_.length; i++) {
-  var a = document.createElement("a");
-  a.innerHTML = text_[i];
-  if(pdf-1==i){
-   a.setAttribute("target","_blank");
-   url="";
-  }
-  a.setAttribute("href",url+link_[i]);
-  dd.appendChild(a);
- }
- 
-} //end madeDd
-
 
 } //end if !detectIE
 
