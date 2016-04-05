@@ -68,7 +68,7 @@ var refitRepair = nav.children[refit_repair_number-1]
 var dd1 = document.createElement("div");
 makeDd(refitRepair,dd1,
    ["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],
-   ["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","http://archive.schoonercreek.com/images/rate_sheet_10-3-14.pdf"],
+   ["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","https://uploads.strikinglycdn.com/files/fbe4859d-30fb-45cb-921c-1199db37624e/Rate_Sheet.pdf"],
    br_url,
    6); // #6 is a PDF link
 
@@ -98,7 +98,7 @@ newConstruction.onmouseout = function() {
 /* ADD PAC12 DROPDOWN */
 var pac12 = nav.children[pac_12_number-1];
 var dd3 = document.createElement("div");
-makeDd(pac12,dd3,["Specifications","Construction","Brochure (pdf)"],["#details","#construction","http://archive.schoonercreek.com/images/pacificcat12.pdf"],pc_url,3);
+makeDd(pac12,dd3,["Specifications","Construction","Brochure (pdf)"],["#details","#construction","https://uploads.strikinglycdn.com/files/c069746e-8336-4d13-aaf2-dee76828d3be/Flier_FullPage_2015.pdf"],pc_url,3);
 
 pac12.onmouseover = function() {
   dd3.setAttribute("class","down1");
