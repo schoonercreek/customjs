@@ -4,6 +4,7 @@ if(!detectIE()){
 
 
 var loader;
+var counter;
 
 /* DROPDOWN GENERATOR */
 var makeDd = function(element,dd,text_,link_,url,pdf) {
@@ -36,7 +37,17 @@ function init() {
  repeater();
 };
 
+var fadeAway = function() {
+ loader.style.opacity="0.0";
+  window.setTimeout(function() {
+    loader.style.display='none';
+  },500);
+}
 var repeater = function() {
+ counter++
+ if(counter>150){
+   fadeAway()  
+ }
  var nav=document.getElementsByClassName('s-nav')[0]
  var mobile = document.getElementsByClassName('strikingly-drawer')[0]
  if(nav && mobile){
