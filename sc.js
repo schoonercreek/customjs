@@ -46,7 +46,8 @@ var fadeAway = function() {
 var repeater = function() {
  counter++
  if(counter>150){
-   fadeAway()  
+   fadeAway() 
+   return
  }
  var nav=document.getElementsByClassName('s-nav')[0]
  var mobile = document.getElementsByClassName('strikingly-drawer')[0]
