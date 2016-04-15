@@ -62,6 +62,8 @@ var repeater = function() {
 }
 
 var gogogo = function() {
+ 
+ fadeAway() 
 
 var nav =  document.getElementsByClassName('s-nav')[0];
 var mobileNav =  document.getElementsByClassName('strikingly-drawer')[0].children[0];
@@ -246,14 +248,6 @@ else if(this_site=='refit-repair'){
     boxes[7].getElementsByClassName('s-title-group')[0].style.cssText="padding:20px;background-color:rgba(0,0,0,0.5);"
     //boxes[3].getElementsByClassName('s-rva-media')[0].style.border="1px solid gray";
 }
-
-
-/* FADE-IN */
-
-loader.style.opacity="0.0";
-window.setTimeout(function() {
-  loader.style.display='none';
-},500);
 
 //}, false);
 
