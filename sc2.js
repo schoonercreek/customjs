@@ -82,7 +82,7 @@ var refitRepair = nav.children[refit_repair_number-1]
 var dd1 = document.createElement("div");
 makeDd(refitRepair,dd1,
    ["Rigging Loft","Woodworking","Electrical","Mechanical","Painting","Rates (pdf)"],
-   ["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","https://uploads.strikinglycdn.com/files/ca5b003c-18f2-4e67-904a-9d589ee2abaf/RateSheet.pdf"],
+   ["#rigging-loft","#custom-woodworking","#electrical","#mechanical-systems","#vessel-painting","https://uploads.strikinglycdn.com/files/86f683ca-bdd0-4783-a646-7f00d62edf98/RateSheet_2016.pdf"],
    br_url,
    6); // #6 is a PDF link
 
